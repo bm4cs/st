@@ -5,7 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "CaskaydiaCove Nerd Font Mono:pixelsize=14:antialias=true:autohint=true";
+//static char *font = "FiraCode Nerd Font:pixelsize=14:antialias=true:autohint=true:weight=light";
+static char *font = "FiraCode Nerd Font:pixelsize=11:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -93,35 +94,33 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-// https://st.suckless.org/patches/dracula/st-dracula-0.8.2.diff
+// monokai.dark theme from terminal.sexy
 static const char *colorname[] = {
-    /* 8 normal colors */
-    [0] = "#000000", /* black   */
-    [1] = "#ff5555", /* red     */
-    [2] = "#50fa7b", /* green   */
-    [3] = "#f1fa8c", /* yellow  */
-    [4] = "#bd93f9", /* blue    */
-    [5] = "#ff79c6", /* magenta */
-    [6] = "#8be9fd", /* cyan    */
-    [7] = "#bbbbbb", /* white   */
 
-    /* 8 bright colors */
-    [8]  = "#44475a", /* black   */
-    [9]  = "#ff5555", /* red     */
-    [10] = "#50fa7b", /* green   */
-    [11] = "#f1fa8c", /* yellow  */
-    [12] = "#bd93f9", /* blue    */
-    [13] = "#ff79c6", /* magenta */
-    [14] = "#8be9fd", /* cyan    */
-    [15] = "#ffffff", /* white   */
+  /* 8 normal colors */
+  [0] = "#272822", /* black   */
+  [1] = "#f92672", /* red     */
+  [2] = "#a6e22e", /* green   */
+  [3] = "#f4bf75", /* yellow  */
+  [4] = "#66d9ef", /* blue    */
+  [5] = "#ae81ff", /* magenta */
+  [6] = "#a1efe4", /* cyan    */
+  [7] = "#f8f8f2", /* white   */
 
-	[255] = 0,
+  /* 8 bright colors */
+  [8]  = "#75715e", /* black   */
+  [9]  = "#f92672", /* red     */
+  [10] = "#a6e22e", /* green   */
+  [11] = "#f4bf75", /* yellow  */
+  [12] = "#66d9ef", /* blue    */
+  [13] = "#ae81ff", /* magenta */
+  [14] = "#a1efe4", /* cyan    */
+  [15] = "#f9f8f5", /* white   */
 
-    /* special colors */
-    [256] = "#282a36", /* background */
-    [257] = "#f8f8f2", /* foreground */
+  /* special colors */
+  [256] = "#272822", /* background */
+  [257] = "#f8f8f2", /* foreground */
 };
-
 
 /*
  * Default colors (colorname index)
@@ -131,6 +130,14 @@ unsigned int defaultfg = 257;
 unsigned int defaultbg = 256;
 static unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 257;
+
+/*
+ * Colors used, when the specific fg == defaultfg. So in reverse mode this
+ * will reverse too. Another logic would only make the simple feature too
+ * complex.
+ */
+static unsigned int defaultitalic = 7;
+static unsigned int defaultunderline = 7;
 
 /*
  * Default shape of cursor
